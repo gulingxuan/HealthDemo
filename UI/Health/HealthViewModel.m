@@ -19,7 +19,7 @@
 @synthesize setupNumber = _setupNumber;
 @synthesize distanceNumber = _distanceNumber;
 @synthesize startDate = _startDate;
-@synthesize btnString = _btnString;
+
 
 
 - (instancetype)init
@@ -100,7 +100,7 @@
             self.setupNumber = nil;
             self.distanceNumber = nil;
         }
-        self.btnString = [x boolValue]?@"运动中，点击结束……":@"开始运动";
+        
     }];
 }
 

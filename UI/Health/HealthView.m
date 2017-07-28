@@ -15,7 +15,7 @@
 @end
 
 @implementation HealthView
-
+@synthesize btnString = _btnString;
 - (instancetype)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];
@@ -24,6 +24,21 @@
         [self createBtn];
     }
     return self;
+}
+
+-(NSString *)btnString
+{
+    if (!_btnString)
+    {
+        _btnString = UserDefaultObjectForKey(@"btnString");
+    }
+    return _btnString;
+}
+
+-(void)setBtnString:(NSString *)btnString
+{
+    _btnString = btnString;
+    UserDefaultSetObjectForKey(_btnString, @"btnString");
 }
 
 -(RACSubject *)runSubject
@@ -100,6 +115,7 @@
         BOOL start = ![btn.titleLabel.text isEqualToString:@"开始运动"];
         [self.runSubject sendNext:@(start)];
         [btn setTitle:[btn.titleLabel.text isEqualToString:@"开始运动"]?@"运动中，点击结束……":@"开始运动" forState:UIControlStateNormal];
+        self.btnString = btn.titleLabel.text;
     }];
 }
 
