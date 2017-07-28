@@ -1,0 +1,54 @@
+//
+//  BaseDemo.pch
+//  BaseDemo
+//
+//  Created by 顾泠轩 on 2017/6/21.
+//  Copyright © 2017年 glx. All rights reserved.
+//
+
+#ifndef BaseDemo_pch
+#define BaseDemo_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+#endif /* BaseDemo_pch */
+
+#ifdef __OBJC__
+#import <AFNetworking.h>
+#import <Masonry.h>
+#import <ReactiveObjC.h>
+#import "UINavigationBar+ChangeColor.h"
+#import "UIButton+Style.h"
+#import "UtilHeader.h"
+#import "CDUIKit.h"
+#import "UIViewExt.h"
+#import "NetWorkHeader.h"
+#import "HttpNetWork.h"
+#import "UIView+Toast.h"
+#import "UIAlertController+CustomAlert.h"
+#import "NSString+IsEmpty.h"
+#import "MessageHeader.h"
+
+
+#endif
+
+#ifdef DEBUG
+#   define DLog(fmt, ...) NSLog((@"%s [Line %d] " fmt), __PRETTY_FUNCTION__, __LINE__, ##__VA_ARGS__);
+#else
+#   define DLog(...)
+#endif
+
+//DEBUG  模式下打印日志,当前行 并弹出一个警告
+#ifdef DEBUG
+#   define ULog(fmt, ...)  { UIAlertView *alert = [[UIAlertView alloc] initWithTitle:[NSString stringWithFormat:@"%s\n [Line %d] ", __PRETTY_FUNCTION__, __LINE__] message:[NSString stringWithFormat:fmt, ##__VA_ARGS__]  delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil]; [alert show]; }
+#else
+#   define ULog(...)
+#endif
+
+//重写NSLog,Debug模式下打印日志和当前行数
+#if DEBUG
+#define NSLog(FORMAT, ...) fprintf(stderr,"\nfunction:%s line:%d content:%s\n", __FUNCTION__, __LINE__, [[NSString stringWithFormat:FORMAT, ##__VA_ARGS__] UTF8String]);
+#else
+#define NSLog(FORMAT, ...) nil
+#endif
