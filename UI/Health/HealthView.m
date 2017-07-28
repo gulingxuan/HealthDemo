@@ -9,13 +9,7 @@
 #import "HealthView.h"
 
 @interface HealthView()
-@property (nonatomic, strong) UILabel *curSetupLabel;//当前步数
-@property (nonatomic, strong) UILabel *curDistanceLabel;//当前公里数
-@property (nonatomic, strong) UILabel *resultSetupLabel;//步数结果
-@property (nonatomic, strong) UILabel *resultDistanceLabel;//距离结果
-@property (nonatomic, strong) NSString *startDate;
-@property (nonatomic, copy) NSString *setupNumber;//步数
-@property (nonatomic, copy) NSString *distanceNumber;//距离
+
 @property (nonatomic, copy) NSString *btnString;
 
 @end
@@ -26,9 +20,19 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
-    
+        [self createLabel];
+        [self createBtn];
     }
     return self;
+}
+
+-(RACSubject *)runSubject
+{
+    if (!_runSubject)
+    {
+        _runSubject = [RACSubject subject];
+    }
+    return _runSubject;
 }
 
 -(void)createLabel
@@ -39,7 +43,7 @@
     {
         UILabel *label = [CDUIKit labelWithTextColor:RGBCOLOR(50, 50, 50) numberOfLines:1 text:!(i%2)?titleArr[i/2]:@"" fontSize:16];
         label.textAlignment = NSTextAlignmentCenter;
-        label.frame = CGRectMake(!(i%2)?15:SCW/2 + 15, preLabel?preLabel.bottom + 15:110, SCW/2 - 30, 25);
+        label.frame = CGRectMake(!(i%2)?15:SCW/2 + 15, preLabel?preLabel.bottom + 15:40, SCW/2 - 30, 25);
         [self addSubview:label];
         if (i%2)
         {
@@ -69,7 +73,8 @@
     
     UILabel *messageLabel = [CDUIKit labelWithBackgroundColor:CDclearColor textColor:RGBCOLOR(50, 50, 50) textAlignment:NSTextAlignmentCenter numberOfLines:0 text:@"" fontSize:15];
     messageLabel.frame = CGRectMake(20, preLabel.bottom + 40, SCW - 40, 120);
-    //跳转行间距
+    
+    //调整行间距
     NSMutableAttributedString *attributedString = [[NSMutableAttributedString alloc] initWithString:str];
     NSMutableParagraphStyle *paragraphStyle = [[NSMutableParagraphStyle alloc] init];
     [paragraphStyle setLineSpacing:10];
@@ -85,14 +90,16 @@
 -(void)createBtn
 {
     UIButton *btn = [CDUIKit buttonWithBackgroundColor:RGBCOLOR(179, 219, 158) titleColor:[UIColor whiteColor] titleHighlightColor:nil title:self.btnString?self.btnString:@"开始运动" fontSize:16];
-    btn.frame = CGRectMake(50, SCH - 120, SCW - 100, 40);
+    btn.frame = CGRectMake(50, SCH - 170, SCW - 100, 40);
     ViewBorderRadius(btn, 4, 0, CDclearColor);
     [self addSubview:btn];
     
     @Weak(self)
     [[btn rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(__kindof UIControl * _Nullable x) {
         @Strong(self)
-        
+        BOOL start = ![btn.titleLabel.text isEqualToString:@"开始运动"];
+        [self.runSubject sendNext:@(start)];
+        [btn setTitle:[btn.titleLabel.text isEqualToString:@"开始运动"]?@"运动中，点击结束……":@"开始运动" forState:UIControlStateNormal];
     }];
 }
 

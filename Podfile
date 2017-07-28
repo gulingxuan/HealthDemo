@@ -2,14 +2,14 @@
 # platform :ios, '9.0'
 
 target 'BaseDemo' do
-pod 'Masonry', '~> 0.6.4'
+pod 'Masonry'
 pod 'AFNetworking'
 pod 'ReactiveObjC'
-pod ‘UMengUShare/UI’
-pod ‘UMengUShare/Social/WeChat'
-pod ‘UMengUShare/Social/ReducedQQ'
-pod ‘UMengUShare/Social/ReducedSina'
-pod 'MMDrawerController', '~> 0.5.7'
+pod 'UMengUShare/UI'
+pod 'UMengUShare/Social/WeChat'
+pod 'UMengUShare/Social/ReducedQQ'
+pod 'UMengUShare/Social/ReducedSina'
+pod 'MMDrawerController'
 pod 'YYText'
 pod 'SVProgressHUD'
 pod 'Realm'
