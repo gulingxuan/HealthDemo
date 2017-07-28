@@ -15,7 +15,23 @@ PODS:
   - AFNetworking/UIKit (3.1.0):
     - AFNetworking/NSURLSession
   - Masonry (0.6.4)
+  - MMDrawerController (0.5.7):
+    - MMDrawerController/Core (= 0.5.7)
+    - MMDrawerController/MMDrawerBarButtonItem (= 0.5.7)
+    - MMDrawerController/MMDrawerVisualStates (= 0.5.7)
+    - MMDrawerController/Subclass (= 0.5.7)
+  - MMDrawerController/Core (0.5.7)
+  - MMDrawerController/MMDrawerBarButtonItem (0.5.7):
+    - MMDrawerController/Core
+  - MMDrawerController/MMDrawerVisualStates (0.5.7):
+    - MMDrawerController/Core
+  - MMDrawerController/Subclass (0.5.7):
+    - MMDrawerController/Core
   - ReactiveObjC (3.0.0)
+  - Realm (2.9.0):
+    - Realm/Headers (= 2.9.0)
+  - Realm/Headers (2.9.0)
+  - SVProgressHUD (2.1.2)
   - UMengUShare/Core (6.4.5):
     - UMengUShare/Network
   - UMengUShare/Network (6.4.5)
@@ -30,22 +46,31 @@ PODS:
     - UMengUShare/Social/ReducedWeChat
   - UMengUShare/UI (6.4.5):
     - UMengUShare/Core
+  - YYText (1.0.7)
 
 DEPENDENCIES:
   - AFNetworking
   - Masonry (~> 0.6.4)
+  - MMDrawerController (~> 0.5.7)
   - ReactiveObjC
+  - Realm
+  - SVProgressHUD
   - UMengUShare/Social/ReducedQQ
   - UMengUShare/Social/ReducedSina
   - UMengUShare/Social/WeChat
   - UMengUShare/UI
+  - YYText
 
 SPEC CHECKSUMS:
   AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
   Masonry: 281802d04d787ea2973179ee8bcb50500579ede2
+  MMDrawerController: 7a4cf8e25596bf2434e03ce50d22a8608ddee6a1
   ReactiveObjC: ce79989e8684b9086b5f8d0c74bc7b81a8729c9e
+  Realm: f14ab1673502559cb16592ddb8f383c474c13e05
+  SVProgressHUD: c404a55d78acbeb7ebb78b76d3faf986475a6994
   UMengUShare: a5711c54e640b04e3048e931d2b88d50f9cfa55c
+  YYText: 5c461d709e24d55a182d1441c41dc639a18a4849
 
-PODFILE CHECKSUM: 2cb72d0dfc40f6fef32d0f598c3f98d4e1df1925
+PODFILE CHECKSUM: 56d2e590226fb5a09352d5b046b9ebbff7b29a4c
 
-COCOAPODS: 1.2.1
+COCOAPODS: 1.1.1

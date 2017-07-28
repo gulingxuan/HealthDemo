@@ -9,4 +9,8 @@ pod ‘UMengUShare/UI’
 pod ‘UMengUShare/Social/WeChat'
 pod ‘UMengUShare/Social/ReducedQQ'
 pod ‘UMengUShare/Social/ReducedSina'
+pod 'MMDrawerController', '~> 0.5.7'
+pod 'YYText'
+pod 'SVProgressHUD'
+pod 'Realm'
 end
