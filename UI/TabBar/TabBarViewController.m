@@ -26,27 +26,19 @@
 -(void)createUI
 {
     
-    NSArray *arr = @[@"HealthViewController",@"ViewController",@"ViewController"];
+    NSArray *arr = @[@"HealthViewController",@"RecordViewController",@"BooksViewController"];
     NSMutableArray *mArr = [NSMutableArray array];
     for (int i = 0; i < arr.count; i++)
     {
-        if (!i || i == 1 || i == arr.count - 2) {
             Class class =NSClassFromString(arr[i]);
             BaseViewController *bvc = [[class alloc]init];
             BaseNavigationController *nvc = [[BaseNavigationController alloc]initWithRootViewController:bvc];
             [mArr addObject:nvc];
-        }
-        else
-        {
-            Class class =NSClassFromString(arr[i]);
-            BaseViewController *bvc = [[class alloc]init];
-            [mArr addObject:bvc];
-        }
-        
+
     }
     self.viewControllers = mArr;
     NSArray *imgArr = @[@"movement",@"record",@"mine"];
-    NSArray *titleArr = @[@"运动",@"记录",@"我的"];
+    NSArray *titleArr = @[@"运动",@"记录",@"账本"];
     
     for (int i = 0; i < titleArr.count; i++)
     {

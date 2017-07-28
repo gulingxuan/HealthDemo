@@ -13,6 +13,8 @@
 		0797EF6D1F2B1275000F3EFD /* HealthView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0797EF6C1F2B1275000F3EFD /* HealthView.m */; };
 		0797EF701F2B1340000F3EFD /* BaseViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0797EF6F1F2B1340000F3EFD /* BaseViewModel.m */; };
 		0797EF731F2B1359000F3EFD /* HealthViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0797EF721F2B1359000F3EFD /* HealthViewModel.m */; };
+		0797EF781F2B18D7000F3EFD /* RecordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0797EF771F2B18D7000F3EFD /* RecordViewController.m */; };
+		0797EF7B1F2B18E5000F3EFD /* BooksViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0797EF7A1F2B18E5000F3EFD /* BooksViewController.m */; };
 		5CDBCF9A617EF2A37A1D0799 /* libPods-BaseDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9855D3342AF3672690B503AC /* libPods-BaseDemo.a */; };
 		62755A681EFA43CF00D32ACE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 62755A671EFA43CF00D32ACE /* main.m */; };
 		62755A6B1EFA43CF00D32ACE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 62755A6A1EFA43CF00D32ACE /* AppDelegate.m */; };
@@ -73,6 +75,10 @@
 		0797EF6F1F2B1340000F3EFD /* BaseViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseViewModel.m; sourceTree = "<group>"; };
 		0797EF711F2B1359000F3EFD /* HealthViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HealthViewModel.h; sourceTree = "<group>"; };
 		0797EF721F2B1359000F3EFD /* HealthViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HealthViewModel.m; sourceTree = "<group>"; };
+		0797EF761F2B18D7000F3EFD /* RecordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecordViewController.h; sourceTree = "<group>"; };
+		0797EF771F2B18D7000F3EFD /* RecordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecordViewController.m; sourceTree = "<group>"; };
+		0797EF791F2B18E5000F3EFD /* BooksViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BooksViewController.h; sourceTree = "<group>"; };
+		0797EF7A1F2B18E5000F3EFD /* BooksViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BooksViewController.m; sourceTree = "<group>"; };
 		3793CC10AD7087C159DA7A7F /* Pods-BaseDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BaseDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-BaseDemo/Pods-BaseDemo.release.xcconfig"; sourceTree = "<group>"; };
 		62755A631EFA43CF00D32ACE /* BaseDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BaseDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		62755A671EFA43CF00D32ACE /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -175,6 +181,24 @@
 			path = Health;
 			sourceTree = "<group>";
 		};
+		0797EF741F2B188C000F3EFD /* Record */ = {
+			isa = PBXGroup;
+			children = (
+				0797EF761F2B18D7000F3EFD /* RecordViewController.h */,
+				0797EF771F2B18D7000F3EFD /* RecordViewController.m */,
+			);
+			path = Record;
+			sourceTree = "<group>";
+		};
+		0797EF751F2B18BF000F3EFD /* Books */ = {
+			isa = PBXGroup;
+			children = (
+				0797EF791F2B18E5000F3EFD /* BooksViewController.h */,
+				0797EF7A1F2B18E5000F3EFD /* BooksViewController.m */,
+			);
+			path = Books;
+			sourceTree = "<group>";
+		};
 		62755A5A1EFA43CE00D32ACE = {
 			isa = PBXGroup;
 			children = (
@@ -244,6 +268,8 @@
 				62755A9B1EFA442800D32ACE /* AppDelegate */,
 				62755A9D1EFA448F00D32ACE /* TabBar */,
 				0797EF631F2863C0000F3EFD /* Health */,
+				0797EF741F2B188C000F3EFD /* Record */,
+				0797EF751F2B18BF000F3EFD /* Books */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -564,6 +590,7 @@
 				62755ABB1EFA453800D32ACE /* YuLoginRegisterUtilities.m in Sources */,
 				0797EF701F2B1340000F3EFD /* BaseViewModel.m in Sources */,
 				62755AD71EFA454800D32ACE /* UILabel+Attribute.m in Sources */,
+				0797EF781F2B18D7000F3EFD /* RecordViewController.m in Sources */,
 				62755AA01EFA448F00D32ACE /* TabBarViewController.m in Sources */,
 				62755ADB1EFA454800D32ACE /* UIView+YSTextInputKeyboard.m in Sources */,
 				62755AD31EFA454800D32ACE /* NSString+IsEmpty.m in Sources */,
@@ -574,6 +601,7 @@
 				62755AA41EFA44C200D32ACE /* BaseViewController.m in Sources */,
 				0797EF661F2863D0000F3EFD /* HealthViewController.m in Sources */,
 				62755AD21EFA454800D32ACE /* NSString+ColorString.m in Sources */,
+				0797EF7B1F2B18E5000F3EFD /* BooksViewController.m in Sources */,
 				62755AD61EFA454800D32ACE /* UIColor+Additional.m in Sources */,
 				0797EF6D1F2B1275000F3EFD /* HealthView.m in Sources */,
 				62755AA71EFA44D500D32ACE /* BaseNavigationController.m in Sources */,
