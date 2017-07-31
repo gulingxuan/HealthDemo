@@ -41,6 +41,8 @@
 	</array>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>NSCameraUsageDescription</key>
+	<string>灵活的胖子想访问相机权限</string>
 	<key>NSHealthShareUsageDescription</key>
 	<string>健康读取</string>
 	<key>NSHealthUpdateUsageDescription</key>
