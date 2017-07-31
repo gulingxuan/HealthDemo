@@ -7,6 +7,7 @@
 //
 
 #import "HealthViewController.h"
+#import <Social/Social.h>
 #import <UShareUI/UShareUI.h>
 #import "HealthViewModel.h"
 
@@ -33,9 +34,40 @@
 //点右键分享到微博
 -(void)rightAction
 {
-    [self share];
+    //友盟分享
+    //[self share];
+//    原生分享
+    [self systemShare];
 }
 
+-(void)systemShare
+{
+    SLComposeViewController *shareVC = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeSinaWeibo];
+    if (![SLComposeViewController isAvailableForServiceType:SLServiceTypeSinaWeibo])
+    {
+        DLog(@"没得微博");
+        return;
+    }
+    
+    //分享标题
+    [shareVC setInitialText:@"#胖轩日常#"];
+    
+    //设置图片
+    [shareVC addImage:[self.viewModel captureImageFromView:[UIApplication sharedApplication].keyWindow]];
+    
+    __block SLComposeViewController *slcVCBlock = shareVC;
+    shareVC.completionHandler = ^(SLComposeViewControllerResult result)
+    {
+        if (result == SLComposeViewControllerResultDone)
+        {
+            DLog(@"分享成功");
+        }
+        [slcVCBlock dismissViewControllerAnimated:YES completion:nil];
+    };
+    [self presentViewController:shareVC animated:YES completion:nil];
+    
+    
+}
 
 
 #pragma mark -- set / get
