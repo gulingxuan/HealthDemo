@@ -15,6 +15,7 @@
 		0797EF731F2B1359000F3EFD /* HealthViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0797EF721F2B1359000F3EFD /* HealthViewModel.m */; };
 		0797EF781F2B18D7000F3EFD /* RecordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0797EF771F2B18D7000F3EFD /* RecordViewController.m */; };
 		0797EF7B1F2B18E5000F3EFD /* BooksViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0797EF7A1F2B18E5000F3EFD /* BooksViewController.m */; };
+		184FB3231F3180CB00862D80 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 184FB3221F3180CB00862D80 /* MessageUI.framework */; };
 		18A6A5D21F30809600DE58BF /* GFCalendarCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 18A6A5C91F30809600DE58BF /* GFCalendarCell.m */; };
 		18A6A5D31F30809600DE58BF /* GFCalendarMonth.m in Sources */ = {isa = PBXBuildFile; fileRef = 18A6A5CB1F30809600DE58BF /* GFCalendarMonth.m */; };
 		18A6A5D41F30809600DE58BF /* GFCalendarScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 18A6A5CD1F30809600DE58BF /* GFCalendarScrollView.m */; };
@@ -143,6 +144,7 @@
 		0797EF771F2B18D7000F3EFD /* RecordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecordViewController.m; sourceTree = "<group>"; };
 		0797EF791F2B18E5000F3EFD /* BooksViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BooksViewController.h; sourceTree = "<group>"; };
 		0797EF7A1F2B18E5000F3EFD /* BooksViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BooksViewController.m; sourceTree = "<group>"; };
+		184FB3221F3180CB00862D80 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		18A6A5C71F30809600DE58BF /* GFCalendar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GFCalendar.h; sourceTree = "<group>"; };
 		18A6A5C81F30809600DE58BF /* GFCalendarCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GFCalendarCell.h; sourceTree = "<group>"; };
 		18A6A5C91F30809600DE58BF /* GFCalendarCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GFCalendarCell.m; sourceTree = "<group>"; };
@@ -333,6 +335,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				184FB3231F3180CB00862D80 /* MessageUI.framework in Frameworks */,
 				5CDBCF9A617EF2A37A1D0799 /* libPods-BaseDemo.a in Frameworks */,
 				0797EF621F284B82000F3EFD /* HealthKit.framework in Frameworks */,
 			);
@@ -940,6 +943,7 @@
 		E4B708182C1E721985B21C8F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				184FB3221F3180CB00862D80 /* MessageUI.framework */,
 				0797EF611F284B82000F3EFD /* HealthKit.framework */,
 				9855D3342AF3672690B503AC /* libPods-BaseDemo.a */,
 			);
