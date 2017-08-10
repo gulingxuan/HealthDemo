@@ -92,10 +92,19 @@
     
     NSLog(@"大姨妈来了");
     
+    
+    
+    
+    
+    
 }
 
 -(void)offlineBtnClick{
     NSLog(@"大姨妈走了");
+    
+    
+    
+    
 }
 
 
