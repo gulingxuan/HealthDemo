@@ -14,6 +14,9 @@ PODS:
   - AFNetworking/Serialization (3.1.0)
   - AFNetworking/UIKit (3.1.0):
     - AFNetworking/NSURLSession
+  - FMDB (2.7.2):
+    - FMDB/standard (= 2.7.2)
+  - FMDB/standard (2.7.2)
   - Masonry (1.0.2)
   - MMDrawerController (0.6.0):
     - MMDrawerController/Core (= 0.6.0)
@@ -50,6 +53,7 @@ PODS:
 
 DEPENDENCIES:
   - AFNetworking
+  - FMDB
   - Masonry
   - MMDrawerController
   - ReactiveObjC
@@ -63,6 +67,7 @@ DEPENDENCIES:
 
 SPEC CHECKSUMS:
   AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
+  FMDB: 6198a90e7b6900cfc046e6bc0ef6ebb7be9236aa
   Masonry: 7c429b56da9d4ee0bbb3ed77a5ea710d6a5df39e
   MMDrawerController: e3a54a5570388463ad3b36975251575b50c4e1a0
   ReactiveObjC: ce79989e8684b9086b5f8d0c74bc7b81a8729c9e
@@ -71,6 +76,6 @@ SPEC CHECKSUMS:
   UMengUShare: a5711c54e640b04e3048e931d2b88d50f9cfa55c
   YYText: 5c461d709e24d55a182d1441c41dc639a18a4849
 
-PODFILE CHECKSUM: aecd469c77255ad67805e9c2a4cbcf1f645863cc
+PODFILE CHECKSUM: a0065884b78fed8d626a6d8f5521398e2b77e3b7
 
-COCOAPODS: 1.1.1
+COCOAPODS: 1.2.1

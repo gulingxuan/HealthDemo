@@ -13,7 +13,7 @@
 @property (nonatomic, strong) UILabel *curDistanceLabel;//当前公里数
 @property (nonatomic, strong) UILabel *resultSetupLabel;//步数结果
 @property (nonatomic, strong) UILabel *resultDistanceLabel;//距离结果
-
+@property (nonatomic, copy) NSString *btnString;//按钮title
 @property (nonatomic, strong) RACSubject *runSubject;//点击运动按钮
 
 @end

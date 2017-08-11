@@ -10,7 +10,7 @@
 
 @interface HealthView()
 
-@property (nonatomic, copy) NSString *btnString;
+
 
 @end
 

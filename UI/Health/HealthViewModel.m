@@ -11,7 +11,9 @@
 #import "HealthKitManage.h"
 
 @interface HealthViewModel()
-
+@property (nonatomic, assign) BOOL running;
+@property (nonatomic, copy) NSString *endSetup;//结束运动时的步数
+@property (nonatomic, copy) NSString *endDistance;//结束是的距离
 
 @end
 
@@ -27,6 +29,7 @@
     self = [super init];
     if (self) {
         [self bindView];
+        self.running = ![self.healthView.btnString isEqualToString:@"开始运动"];
         //注册通知,从后台进入App时刷新数据，Appdelegate发出通知
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(refreshData) name:SPORT_DATA_REFRESH object:nil];
     }
@@ -95,11 +98,12 @@
             }];
             
         }
-        else//结束运动
+        else//结束运动,保存数据
         {
-            self.setupNumber = nil;
-            self.distanceNumber = nil;
+            self.endSetup = self.healthView.curSetupLabel.text;
+            self.endSetup = self.healthView.curDistanceLabel.text;
         }
+        self.running = [x boolValue];
         
     }];
 }
@@ -205,13 +209,19 @@
                 NSLog(@"1count-->%.0f", value);
                 NSLog(@"1error-->%@", error.localizedDescription);
                 dispatch_async(dispatch_get_main_queue(), ^{
+                    //今日总步数
                     self.healthView.curSetupLabel.text = [NSString stringWithFormat:@"%.0f步", value];
-                    //运动模式才进行计算今日步数
+                    //存在起始步数才进行计算运动步数
                     if(self.setupNumber)
                     {
                         //开始运动时的起始步数
                         CGFloat startSetup = [self.setupNumber floatValue];
-                        self.healthView.resultSetupLabel.text = value>startSetup?[NSString stringWithFormat:@"%.0f步",value-startSetup] : @"0步";
+                        //处于运动模式才进行步数计算
+                        if (self.running)
+                        {
+                            self.healthView.resultSetupLabel.text = value>startSetup?[NSString stringWithFormat:@"%.0f步",value-startSetup] : @"0步";
+                        }
+                        
                     }
                     else
                     {
@@ -237,13 +247,18 @@
                 NSLog(@"2count-->%.2f", value);
                 NSLog(@"2error-->%@", error.localizedDescription);
                 dispatch_async(dispatch_get_main_queue(), ^{
+                    //今日总距离
                     self.healthView.curDistanceLabel.text = [NSString stringWithFormat:@"%.2f公里", value];
-                    //运动模式才进行计算今日距离
+                    //存在起始距离才进行计算今日距离
                     if (self.distanceNumber)
                     {
                         //开始运动时的起始距离
                         CGFloat startDistance = [self.distanceNumber floatValue];
-                        self.healthView.resultDistanceLabel.text = value > startDistance ? [NSString stringWithFormat:@"%.2f公里",value -  startDistance] : @"0公里";
+                        //处于运动状态才进行距离计算
+                        if (self.running)
+                        {
+                            self.healthView.resultDistanceLabel.text = value > startDistance ? [NSString stringWithFormat:@"%.2f公里",value -  startDistance] : @"0公里";
+                        }
                     }
                     else
                     {
