@@ -150,8 +150,14 @@
 #define iPhone6Plus ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(1242, 2208), [[UIScreen mainScreen] currentMode].size) : NO)
 
 
+//提示框
+#define SHOW_ALERT(_title_,_msg_)  UIAlertView *alert = [[UIAlertView alloc] initWithTitle:_title_ message:_msg_ delegate:self cancelButtonTitle:nil otherButtonTitles:@"确定", nil];\
+[alert show];
 
 
+#define SHOW_AlERTController(_title_,_msg_) UIAlertController *alert = [UIAlertController alertControllerWithTitle:_title_ message:_msg_ preferredStyle:  UIAlertControllerStyleAlert];\
+[alert addAction:[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {}]];\
+[self presentViewController:alert animated:true completion:nil];
 
 
 
